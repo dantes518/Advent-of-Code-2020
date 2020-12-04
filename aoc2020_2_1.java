@@ -20,12 +20,13 @@ public class aoc2020_2_1 {
             range[0] = Integer.parseInt(curRange[0]);
             range[1] = Integer.parseInt(curRange[1]);
             curCharacter = curPassword[1].charAt(0);
-            for(int i = 0; i < curPassword[2].length(); i++){
-                if(curPassword[2].charAt(i) == curCharacter){
-                    count++;
-                }
+            if(curPassword[2].charAt(range[0] - 1) == curCharacter){
+                count++;
             }
-            if(count >= range[0] && count <= range[1]){
+            if(curPassword[2].charAt(range[1] - 1) == curCharacter){
+                count++;
+            }
+            if(count == 1){
                 valid++;
             }
             count = 0;
